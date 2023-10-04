@@ -3,6 +3,7 @@
         "title": "Mero Hostel",
         "version": "1.0",
         "description": "Mero Hostel API documentation",
+        "developer": "Hancie Phago, Nitesh Hamal, Ajaya Timsina",
         "termsOfService": "#",
         "license": {
             "name": "MIT",
