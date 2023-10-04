@@ -1,7 +1,4 @@
 # mero_hostel_swagger
-
-# Generate OpenAPI yaml from Postman json file:
-
 ###
 
 1. `npm i postman-to-openapi -g` - for using p20 as a cli
