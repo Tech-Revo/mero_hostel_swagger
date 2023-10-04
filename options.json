@@ -1,0 +1,29 @@
+{
+    "info": {
+        "title": "Mero Hostel",
+        "version": "1.0",
+        "description": "Mero Hostel API documentation",
+        "termsOfService": "#",
+        "license": {
+            "name": "MIT",
+            "url": "https://es.wikipedia.org/wiki/Licencia_MIT"
+        },
+        "contact": {
+            "name": "Mero Hostel",
+            "url": "https://hancie-phago.com.np/",
+            "email": "merohostel@gmail.com"
+        },
+        "xLogo": {
+            "url": "https://github.com/joolfe/logoBanner.png",
+            "backgroundColor": "#FFFFFF",
+            "altText": "logo"
+        }
+        
+    },
+    "servers": [
+        {
+            "url": "https://merohostel.hancie-phago.com.np/",
+            "description": "server"
+        }
+    ]
+}

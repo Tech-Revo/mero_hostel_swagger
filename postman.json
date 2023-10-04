@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "63327bab-b021-4065-bc6e-330f2a83b8a3",
+		"name": "mero_hostel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30164242",
+		"_collection_link": "https://mero-hostel.postman.co/workspace/Mero-Hostel~7bbd2589-6084-4070-8b9b-b3c58a9ef7be/collection/30164242-63327bab-b021-4065-bc6e-330f2a83b8a3?action=share&source=collection_link&creator=30164242"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "create users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

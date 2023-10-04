@@ -1,0 +1,60 @@
+openapi: 3.0.0
+info:
+  title: Mero Hostel
+  description: Mero Hostel API documentation
+  version: '1.0'
+  x-logo:
+    url: https://github.com/joolfe/logoBanner.png
+    backgroundColor: '#FFFFFF'
+    altText: logo
+  termsOfService: '#'
+  contact:
+    name: Mero Hostel
+    url: https://hancie-phago.com.np/
+    email: merohostel@gmail.com
+  license:
+    name: MIT
+    url: https://es.wikipedia.org/wiki/Licencia_MIT
+servers:
+  - url: https://merohostel.hancie-phago.com.np/
+    description: server
+tags:
+  - name: users
+  - name: login
+paths:
+  /api/users:
+    post:
+      tags:
+        - users
+      summary: create users
+      requestBody:
+        content: {}
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/login:
+    post:
+      tags:
+        - login
+      summary: login
+      requestBody:
+        content: {}
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
