@@ -1,17 +1,16 @@
 {
 	"info": {
-		"_postman_id": "63327bab-b021-4065-bc6e-330f2a83b8a3",
+		"_postman_id": "b7458b57-5cf1-445b-9eeb-e8f158ff70e3",
 		"name": "mero_hostel",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30164242",
-		"_collection_link": "https://mero-hostel.postman.co/workspace/Mero-Hostel~7bbd2589-6084-4070-8b9b-b3c58a9ef7be/collection/30164242-63327bab-b021-4065-bc6e-330f2a83b8a3?action=share&source=collection_link&creator=30164242"
+		"_exporter_id": "30164242"
 	},
 	"item": [
 		{
-			"name": "users",
+			"name": "user",
 			"item": [
 				{
-					"name": "create users",
+					"name": "create user account",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -21,6 +20,94 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Hancie Phago",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "hanciewanemphago@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Hostel_Owner",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://merohostel.hancie-phago.com.np/api/users",
+							"protocol": "https",
+							"host": [
+								"merohostel",
+								"hancie-phago",
+								"com",
+								"np"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Hancie Phago",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "hanciewanemphago@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Hostel_Owner",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
 							"raw": "{{url}}/api/users",
 							"host": [
@@ -50,10 +137,68 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "hanciephago@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
 							"raw": "{{url}}/api/login",
 							"host": [
 								"{{url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "hanciephago@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://merohostel.hancie-phago.com.np/api/login",
+							"protocol": "https",
+							"host": [
+								"merohostel",
+								"hancie-phago",
+								"com",
+								"np"
 							],
 							"path": [
 								"api",

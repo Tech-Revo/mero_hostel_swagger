@@ -19,16 +19,35 @@ servers:
   - url: https://merohostel.hancie-phago.com.np/
     description: server
 tags:
-  - name: users
+  - name: user
   - name: login
 paths:
   /api/users:
     post:
       tags:
-        - users
-      summary: create users
+        - user
+      summary: create account
       requestBody:
-        content: {}
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Hancie Phago
+                email:
+                  type: string
+                  example: hanciewanemphago@gmail.com
+                password:
+                  type: integer
+                  example: '12345678'
+                password_confirmation:
+                  type: integer
+                  example: '12345678'
+                status:
+                  type: string
+                  example: Hostel_Owner
       parameters:
         - name: Accept
           in: header
@@ -46,7 +65,17 @@ paths:
         - login
       summary: login
       requestBody:
-        content: {}
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: hanciephago@gmail.com
+                password:
+                  type: integer
+                  example: '12345678'
       parameters:
         - name: Accept
           in: header
