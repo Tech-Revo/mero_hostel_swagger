@@ -142,12 +142,12 @@
 							"formdata": [
 								{
 									"key": "email",
-									"value": "hanciephago@gmail.com",
+									"value": "hanciewanemphago@gmail.com",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "12345678",
+									"value": "1",
 									"type": "text"
 								}
 							]
@@ -203,6 +203,40 @@
 							"path": [
 								"api",
 								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "hanciewanemphago@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/send-forgot-password-mail",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"send-forgot-password-mail"
 							]
 						}
 					},
