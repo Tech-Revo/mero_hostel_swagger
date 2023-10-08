@@ -7,8 +7,13 @@
 
 3. Run `make doc` in terminal to generate openApi.
 
-4. View Api in : https://mero-hostel-swagger.vercel.app/
-5. View Api in : https://tech-revo.github.io/mero_hostel_swagger/
+## Access the API Documentation
+
+Once you've generated the OpenAPI documentation, you can access it through the following URLs:
+
+4. [Mero Hostel Swagger on Vercel](https://mero-hostel-swagger.vercel.app/)
+
+5. [Mero Hostel Swagger on GitHub Pages](https://tech-revo.github.io/mero_hostel_swagger/)
 
 6. Reference: https://swagger.io/tools/swagger-ui/
 
