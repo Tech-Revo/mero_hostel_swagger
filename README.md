@@ -11,11 +11,11 @@
 
 Once you've generated the OpenAPI documentation, you can access it through the following URLs:
 
-4. <a href="https://mero-hostel-swagger.vercel.app/" target="_blank">Mero Hostel Swagger on Vercel</a>
+4. <a target="_blank" href="https://mero-hostel-swagger.vercel.app/">Mero Hostel Swagger on Vercel</a>
 
-5. <a href="https://tech-revo.github.io/mero_hostel_swagger/" target="_blank">Mero Hostel Swagger on GitHub Pages</a>
+5. <a target="_blank" href="https://tech-revo.github.io/mero_hostel_swagger/">Mero Hostel Swagger on GitHub Pages</a>
 
-6. Reference: <a href="https://swagger.io/tools/swagger-ui/" target="_blank">Swagger Tools</a>
+6. Reference: <a target="_blank" href="https://swagger.io/tools/swagger-ui/">Swagger Tools</a>
 
 
 
