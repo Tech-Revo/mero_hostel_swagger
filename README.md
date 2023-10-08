@@ -15,5 +15,6 @@ Once you've generated the OpenAPI documentation, you can access it through the f
 
 5. [Mero Hostel Swagger on GitHub Pages](https://tech-revo.github.io/mero_hostel_swagger/){:target="_blank"}
 
-6. Reference: https://swagger.io/tools/swagger-ui/{:target="_blank"}
+6. [Reference: Swagger Tools](https://swagger.io/tools/swagger-ui/){:target="_blank"}
+
 
