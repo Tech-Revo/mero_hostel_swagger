@@ -53,7 +53,7 @@
 										},
 										{
 											"key": "email",
-											"value": "hancie@gmail.com",
+											"value": "hanciephago@gmail.com",
 											"type": "text"
 										},
 										{
@@ -97,13 +97,20 @@
 									]
 								},
 								"url": {
-									"raw": "{{url}}/admin/hostels",
+									"raw": "{{url}}/admin/hostels/:slug",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"hostels"
+										"hostels",
+										":slug"
+									],
+									"variable": [
+										{
+											"key": "slug",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -135,14 +142,20 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{url}}/admin/hostels/mero-hostel",
+									"raw": "{{url}}/admin/hostels/:slug",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
 										"hostels",
-										"mero-hostel"
+										":slug"
+									],
+									"variable": [
+										{
+											"key": "slug",
+											"value": ""
+										}
 									]
 								}
 							},
