@@ -8,6 +8,7 @@
 3. Run `make doc` in terminal to generate openApi.
 
 # 4. View Api in : https://mero-hostel-swagger.vercel.app/
+# 5. View Api in : https://tech-revo.github.io/mero_hostel_swagger/
 
 #### Reference `https://joolfe.github.io/postman-to-openapi/`
 
