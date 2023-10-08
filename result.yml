@@ -18,36 +18,66 @@ info:
 servers:
   - url: https://merohostel.hancie-phago.com.np/
     description: server
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
 tags:
-  - name: user
-  - name: login
+  - name: Admin
+  - name: Admin > hostels
+  - name: Public
+  - name: Public > login
+  - name: Public > user
 paths:
-  /api/users:
+  /admin/hostels:
     post:
       tags:
-        - user
-      summary: create account
+        - Admin > hostels
+      summary: update hostel
       requestBody:
         content:
           multipart/form-data:
             schema:
               type: object
               properties:
-                name:
+                _method:
                   type: string
-                  example: Hancie Phago
-                email:
-                  type: string
-                  example: hanciewanemphago@gmail.com
-                password:
-                  type: integer
-                  example: '12345678'
-                password_confirmation:
-                  type: integer
-                  example: '12345678'
-                status:
-                  type: string
-                  example: Hostel_Owner
+                  example: put
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Admin > hostels
+      summary: show hostels
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: slug
+          in: query
+          schema:
+            type: string
+          example: mero-hostel-1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/hostels/mero-hostel:
+    delete:
+      tags:
+        - Admin > hostels
+      summary: delete hostel
+      security:
+        - bearerAuth: []
       parameters:
         - name: Accept
           in: header
@@ -62,7 +92,7 @@ paths:
   /api/login:
     post:
       tags:
-        - login
+        - Public > login
       summary: login
       requestBody:
         content:
@@ -90,7 +120,7 @@ paths:
   /api/send-forgot-password-mail:
     post:
       tags:
-        - login
+        - Public > login
       summary: forgot password
       requestBody:
         content:
@@ -101,6 +131,43 @@ paths:
                 email:
                   type: string
                   example: hanciewanemphago@gmail.com
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/users:
+    post:
+      tags:
+        - Public > user
+      summary: create account
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Hancie Phago
+                email:
+                  type: string
+                  example: hanciewanemphago@gmail.com
+                password:
+                  type: integer
+                  example: '12345678'
+                password_confirmation:
+                  type: integer
+                  example: '12345678'
+                status:
+                  type: string
+                  example: Hostel_Owner
       parameters:
         - name: Accept
           in: header

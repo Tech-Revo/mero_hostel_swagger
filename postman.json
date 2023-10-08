@@ -7,240 +7,431 @@
 	},
 	"item": [
 		{
-			"name": "user",
+			"name": "Admin",
 			"item": [
 				{
-					"name": "create user account",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "Hancie Phago",
-									"type": "text"
+					"name": "hostels",
+					"item": [
+						{
+							"name": "create hostels",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMmMyZDc5MjgyYzM1YTljNWFkNjQ0ODFiM2U0MjE4OGUyMTVkNmY5NDM4MzU0NzhkOTBkMWVkYmE1OTcxMTc1MTZjZjFmZjk4Yzc4Y2U1NmEiLCJpYXQiOjE2OTY3NTk2NTAuNjY1MDE2LCJuYmYiOjE2OTY3NTk2NTAuNjY1MDE3LCJleHAiOjE3MjgzODIwNTAuNjU4NTE2LCJzdWIiOiI4MSIsInNjb3BlcyI6W119.d3FZQNoadTbD9zLq24Ys_8XandA6MHnpsKInUEl5XV1GqKau0AOXN84EfjSc9xuyF3CUM439oyXxkgkKFpEfb8VSd7P4ZPvVuXuFyPN3PZ8zM-Q1rvrxq-8NtIWX1ppCHjMcWlShtDX5Xv3t_hnNxUBEUlQX-ADT0BKLG4lhl4StFbxskyMLzFieod1_5MkIIgbBpsXeiLZiBQuZ5UKbjaD47Kp1SjT3DYuPvEdM0xvVa8SrlmDGzXg2tYsQe3Env7Dtm2mttWbmSHspoIODUf6XmIK5xyVE8w-5X-idVGxuHxD8CTUE6KsnlffsZzGQDNO_WRdsr1ByqYVdemLlDpD0RdlGZ0tLIU_OJRS9FIE11VasC77nqzj0Q1N9iFXoYXGzhhhSoufFqaKtQrea-HrZynY-REjThRsjkwZr8cn6aub5_kC3Kzui3VHAdeuMrtH6WMQNsJaxiJLIkYEiWZ9selcC22-rxk-pNV3t3qOiqROHFbI52Y6auMj00xwReRc4UBJkW5xow3B_lfIrtQl4M4GkRWI80-4FXiUQ7CIa88vPr71Um9LcQ9eLbx8mm_1JwJtzU-phi4nvmHG7hv26DYCPHU2lfo2InAzGropc3a3B77WYLTrDVcOXQ3Tww2UdHO9A-P16tAL0rpyxj2LUC3itS1pog4LSDSEskDo",
+											"type": "string"
+										}
+									]
 								},
-								{
-									"key": "email",
-									"value": "hanciewanemphago@gmail.com",
-									"type": "text"
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "hostel_name",
+											"value": "Mero Hostel",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Kathmandu",
+											"type": "text"
+										},
+										{
+											"key": "phone_number",
+											"value": "9825915122",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "hancie@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "website",
+											"value": "hanciephago.com.np",
+											"type": "text"
+										},
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
 								},
-								{
-									"key": "password",
-									"value": "12345678",
-									"type": "text"
-								},
-								{
-									"key": "password_confirmation",
-									"value": "12345678",
-									"type": "text"
-								},
-								{
-									"key": "status",
-									"value": "Hostel_Owner",
-									"type": "text"
+								"url": {
+									"raw": "{{url}}/admin/hostels",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"hostels"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "https://merohostel.hancie-phago.com.np/api/users",
-							"protocol": "https",
-							"host": [
-								"merohostel",
-								"hancie-phago",
-								"com",
-								"np"
-							],
-							"path": [
-								"api",
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create account",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "Hancie Phago",
-									"type": "text"
+						{
+							"name": "update hostel",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										}
+									]
 								},
-								{
-									"key": "email",
-									"value": "hanciewanemphago@gmail.com",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "12345678",
-									"type": "text"
-								},
-								{
-									"key": "password_confirmation",
-									"value": "12345678",
-									"type": "text"
-								},
-								{
-									"key": "status",
-									"value": "Hostel_Owner",
-									"type": "text"
+								"url": {
+									"raw": "{{url}}/admin/hostels",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"hostels"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "{{url}}/api/users",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"users"
-							]
+						{
+							"name": "delete hostel",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMmMyZDc5MjgyYzM1YTljNWFkNjQ0ODFiM2U0MjE4OGUyMTVkNmY5NDM4MzU0NzhkOTBkMWVkYmE1OTcxMTc1MTZjZjFmZjk4Yzc4Y2U1NmEiLCJpYXQiOjE2OTY3NTk2NTAuNjY1MDE2LCJuYmYiOjE2OTY3NTk2NTAuNjY1MDE3LCJleHAiOjE3MjgzODIwNTAuNjU4NTE2LCJzdWIiOiI4MSIsInNjb3BlcyI6W119.d3FZQNoadTbD9zLq24Ys_8XandA6MHnpsKInUEl5XV1GqKau0AOXN84EfjSc9xuyF3CUM439oyXxkgkKFpEfb8VSd7P4ZPvVuXuFyPN3PZ8zM-Q1rvrxq-8NtIWX1ppCHjMcWlShtDX5Xv3t_hnNxUBEUlQX-ADT0BKLG4lhl4StFbxskyMLzFieod1_5MkIIgbBpsXeiLZiBQuZ5UKbjaD47Kp1SjT3DYuPvEdM0xvVa8SrlmDGzXg2tYsQe3Env7Dtm2mttWbmSHspoIODUf6XmIK5xyVE8w-5X-idVGxuHxD8CTUE6KsnlffsZzGQDNO_WRdsr1ByqYVdemLlDpD0RdlGZ0tLIU_OJRS9FIE11VasC77nqzj0Q1N9iFXoYXGzhhhSoufFqaKtQrea-HrZynY-REjThRsjkwZr8cn6aub5_kC3Kzui3VHAdeuMrtH6WMQNsJaxiJLIkYEiWZ9selcC22-rxk-pNV3t3qOiqROHFbI52Y6auMj00xwReRc4UBJkW5xow3B_lfIrtQl4M4GkRWI80-4FXiUQ7CIa88vPr71Um9LcQ9eLbx8mm_1JwJtzU-phi4nvmHG7hv26DYCPHU2lfo2InAzGropc3a3B77WYLTrDVcOXQ3Tww2UdHO9A-P16tAL0rpyxj2LUC3itS1pog4LSDSEskDo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/hostels/mero-hostel",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"hostels",
+										"mero-hostel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show hostels",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMmMyZDc5MjgyYzM1YTljNWFkNjQ0ODFiM2U0MjE4OGUyMTVkNmY5NDM4MzU0NzhkOTBkMWVkYmE1OTcxMTc1MTZjZjFmZjk4Yzc4Y2U1NmEiLCJpYXQiOjE2OTY3NTk2NTAuNjY1MDE2LCJuYmYiOjE2OTY3NTk2NTAuNjY1MDE3LCJleHAiOjE3MjgzODIwNTAuNjU4NTE2LCJzdWIiOiI4MSIsInNjb3BlcyI6W119.d3FZQNoadTbD9zLq24Ys_8XandA6MHnpsKInUEl5XV1GqKau0AOXN84EfjSc9xuyF3CUM439oyXxkgkKFpEfb8VSd7P4ZPvVuXuFyPN3PZ8zM-Q1rvrxq-8NtIWX1ppCHjMcWlShtDX5Xv3t_hnNxUBEUlQX-ADT0BKLG4lhl4StFbxskyMLzFieod1_5MkIIgbBpsXeiLZiBQuZ5UKbjaD47Kp1SjT3DYuPvEdM0xvVa8SrlmDGzXg2tYsQe3Env7Dtm2mttWbmSHspoIODUf6XmIK5xyVE8w-5X-idVGxuHxD8CTUE6KsnlffsZzGQDNO_WRdsr1ByqYVdemLlDpD0RdlGZ0tLIU_OJRS9FIE11VasC77nqzj0Q1N9iFXoYXGzhhhSoufFqaKtQrea-HrZynY-REjThRsjkwZr8cn6aub5_kC3Kzui3VHAdeuMrtH6WMQNsJaxiJLIkYEiWZ9selcC22-rxk-pNV3t3qOiqROHFbI52Y6auMj00xwReRc4UBJkW5xow3B_lfIrtQl4M4GkRWI80-4FXiUQ7CIa88vPr71Um9LcQ9eLbx8mm_1JwJtzU-phi4nvmHG7hv26DYCPHU2lfo2InAzGropc3a3B77WYLTrDVcOXQ3Tww2UdHO9A-P16tAL0rpyxj2LUC3itS1pog4LSDSEskDo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/hostels?slug=mero-hostel-1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"hostels"
+									],
+									"query": [
+										{
+											"key": "slug",
+											"value": "mero-hostel-1"
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				}
 			]
 		},
 		{
-			"name": "login",
+			"name": "Public",
 			"item": [
 				{
 					"name": "login",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "email",
-									"value": "hanciewanemphago@gmail.com",
-									"type": "text"
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "hanciewanemphago@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
 								},
-								{
-									"key": "password",
-									"value": "1",
-									"type": "text"
+								"url": {
+									"raw": "{{url}}/api/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "{{url}}/api/login",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"login"
-							]
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "hanciephago@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://merohostel.hancie-phago.com.np/api/login",
+									"protocol": "https",
+									"host": [
+										"merohostel",
+										"hancie-phago",
+										"com",
+										"np"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "forgot password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "hanciewanemphago@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/send-forgot-password-mail",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"send-forgot-password-mail"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "login",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "email",
-									"value": "hanciephago@gmail.com",
-									"type": "text"
+					"name": "user",
+					"item": [
+						{
+							"name": "create user account",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Hancie Phago",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "hanciewanemphago@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "Hostel_Owner",
+											"type": "text"
+										}
+									]
 								},
-								{
-									"key": "password",
-									"value": "12345678",
-									"type": "text"
+								"url": {
+									"raw": "https://merohostel.hancie-phago.com.np/api/users",
+									"protocol": "https",
+									"host": [
+										"merohostel",
+										"hancie-phago",
+										"com",
+										"np"
+									],
+									"path": [
+										"api",
+										"users"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "https://merohostel.hancie-phago.com.np/api/login",
-							"protocol": "https",
-							"host": [
-								"merohostel",
-								"hancie-phago",
-								"com",
-								"np"
-							],
-							"path": [
-								"api",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "forgot password",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "email",
-									"value": "hanciewanemphago@gmail.com",
-									"type": "text"
+						{
+							"name": "create account",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Hancie Phago",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "hanciewanemphago@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "Hostel_Owner",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/users",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
 								}
-							]
-						},
-						"url": {
-							"raw": "{{url}}/api/send-forgot-password-mail",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"send-forgot-password-mail"
-							]
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				}
 			]
 		}
