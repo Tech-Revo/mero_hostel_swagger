@@ -10,5 +10,5 @@
 4. View Api in : https://mero-hostel-swagger.vercel.app/
 5. View Api in : https://tech-revo.github.io/mero_hostel_swagger/
 
-#### Reference `https://joolfe.github.io/postman-to-openapi/`
+6. Reference: https://swagger.io/tools/swagger-ui/
 
