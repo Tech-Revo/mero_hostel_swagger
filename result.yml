@@ -45,25 +45,25 @@ paths:
               properties:
                 hostel_name:
                   type: string
-                  example: Nitesh Boys Hostel
+                  example: Kanya Girls Hostel
                 address:
                   type: string
-                  example: Shankamul
+                  example: Dilibazar
                 phone_number:
                   type: integer
-                  example: '9813371345'
+                  example: '9824543556'
                 email:
                   type: string
-                  example: nitesh0hamal@gmail.com
+                  example: kanya@gmail.com
                 website:
                   type: string
-                  example: nsnsnsn
+                  example: kanyagirlshostel.com
                 hostel_image:
                   type: string
                   format: binary
                 hostel_type:
                   type: string
-                  example: Boys hostel
+                  example: Girls hostel
       security:
         - bearerAuth: []
       parameters:
@@ -405,6 +405,11 @@ paths:
           schema:
             type: string
           example: application/json
+        - name: hostel_type
+          in: query
+          schema:
+            type: string
+          example: Girls hostel
       responses:
         '200':
           description: Successful response

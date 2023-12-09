@@ -39,37 +39,37 @@
 									"formdata": [
 										{
 											"key": "hostel_name",
-											"value": "Nitesh Boys Hostel",
+											"value": "Kanya Girls Hostel",
 											"type": "text"
 										},
 										{
 											"key": "address",
-											"value": "Shankamul",
+											"value": "Dilibazar",
 											"type": "text"
 										},
 										{
 											"key": "phone_number",
-											"value": "9813371345",
+											"value": "9824543556",
 											"type": "text"
 										},
 										{
 											"key": "email",
-											"value": "nitesh0hamal@gmail.com",
+											"value": "kanya@gmail.com",
 											"type": "text"
 										},
 										{
 											"key": "website",
-											"value": "nsnsnsn",
+											"value": "kanyagirlshostel.com",
 											"type": "text"
 										},
 										{
 											"key": "hostel_image",
 											"type": "file",
-											"src": "/C:/Users/nites/Downloads/406063999_875325967597402_8753379613108924458_n.jpg"
+											"src": "/Users/hanciephago/Downloads/Kanya-Girls-Hostel.jpg"
 										},
 										{
 											"key": "hostel_type",
-											"value": "Boys hostel",
+											"value": "Girls hostel",
 											"type": "text"
 										}
 									]
@@ -679,13 +679,19 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/api/hostels",
+									"raw": "{{url}}/api/hostels?hostel_type=Girls hostel",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"api",
 										"hostels"
+									],
+									"query": [
+										{
+											"key": "hostel_type",
+											"value": "Girls hostel"
+										}
 									]
 								}
 							},
