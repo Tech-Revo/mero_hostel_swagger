@@ -1,26 +1,27 @@
 {
 	"info": {
-		"_postman_id": "b7458b57-5cf1-445b-9eeb-e8f158ff70e3",
+		"_postman_id": "63327bab-b021-4065-bc6e-330f2a83b8a3",
 		"name": "mero_hostel",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30164242"
+		"_exporter_id": "30164242",
+		"_collection_link": "https://mero-hostel.postman.co/workspace/Tech-Revo~7bbd2589-6084-4070-8b9b-b3c58a9ef7be/collection/30164242-63327bab-b021-4065-bc6e-330f2a83b8a3?action=share&source=collection_link&creator=30164242"
 	},
 	"item": [
 		{
-			"name": "Admin",
+			"name": "admin",
 			"item": [
 				{
-					"name": "hostels",
+					"name": "hostel",
 					"item": [
 						{
-							"name": "create hostels",
+							"name": "create hostel",
 							"request": {
 								"auth": {
 									"type": "bearer",
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMmMyZDc5MjgyYzM1YTljNWFkNjQ0ODFiM2U0MjE4OGUyMTVkNmY5NDM4MzU0NzhkOTBkMWVkYmE1OTcxMTc1MTZjZjFmZjk4Yzc4Y2U1NmEiLCJpYXQiOjE2OTY3NTk2NTAuNjY1MDE2LCJuYmYiOjE2OTY3NTk2NTAuNjY1MDE3LCJleHAiOjE3MjgzODIwNTAuNjU4NTE2LCJzdWIiOiI4MSIsInNjb3BlcyI6W119.d3FZQNoadTbD9zLq24Ys_8XandA6MHnpsKInUEl5XV1GqKau0AOXN84EfjSc9xuyF3CUM439oyXxkgkKFpEfb8VSd7P4ZPvVuXuFyPN3PZ8zM-Q1rvrxq-8NtIWX1ppCHjMcWlShtDX5Xv3t_hnNxUBEUlQX-ADT0BKLG4lhl4StFbxskyMLzFieod1_5MkIIgbBpsXeiLZiBQuZ5UKbjaD47Kp1SjT3DYuPvEdM0xvVa8SrlmDGzXg2tYsQe3Env7Dtm2mttWbmSHspoIODUf6XmIK5xyVE8w-5X-idVGxuHxD8CTUE6KsnlffsZzGQDNO_WRdsr1ByqYVdemLlDpD0RdlGZ0tLIU_OJRS9FIE11VasC77nqzj0Q1N9iFXoYXGzhhhSoufFqaKtQrea-HrZynY-REjThRsjkwZr8cn6aub5_kC3Kzui3VHAdeuMrtH6WMQNsJaxiJLIkYEiWZ9selcC22-rxk-pNV3t3qOiqROHFbI52Y6auMj00xwReRc4UBJkW5xow3B_lfIrtQl4M4GkRWI80-4FXiUQ7CIa88vPr71Um9LcQ9eLbx8mm_1JwJtzU-phi4nvmHG7hv26DYCPHU2lfo2InAzGropc3a3B77WYLTrDVcOXQ3Tww2UdHO9A-P16tAL0rpyxj2LUC3itS1pog4LSDSEskDo",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
@@ -38,32 +39,37 @@
 									"formdata": [
 										{
 											"key": "hostel_name",
-											"value": "Mero Hostel",
+											"value": "Nitesh Boys Hostel",
 											"type": "text"
 										},
 										{
 											"key": "address",
-											"value": "Kathmandu",
+											"value": "Shankamul",
 											"type": "text"
 										},
 										{
 											"key": "phone_number",
-											"value": "9825915122",
+											"value": "9813371345",
 											"type": "text"
 										},
 										{
 											"key": "email",
-											"value": "hanciephago@gmail.com",
+											"value": "nitesh0hamal@gmail.com",
 											"type": "text"
 										},
 										{
 											"key": "website",
-											"value": "hanciephago.com.np",
+											"value": "nsnsnsn",
 											"type": "text"
 										},
 										{
-											"key": "user_id",
-											"value": "1",
+											"key": "hostel_image",
+											"type": "file",
+											"src": "/C:/Users/nites/Downloads/406063999_875325967597402_8753379613108924458_n.jpg"
+										},
+										{
+											"key": "hostel_type",
+											"value": "Boys hostel",
 											"type": "text"
 										}
 									]
@@ -84,52 +90,17 @@
 						{
 							"name": "update hostel",
 							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "_method",
-											"value": "put",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/admin/hostels/:slug",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"hostels",
-										":slug"
-									],
-									"variable": [
-										{
-											"key": "slug",
-											"value": ""
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "delete hostel",
-							"request": {
 								"auth": {
 									"type": "bearer",
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMmMyZDc5MjgyYzM1YTljNWFkNjQ0ODFiM2U0MjE4OGUyMTVkNmY5NDM4MzU0NzhkOTBkMWVkYmE1OTcxMTc1MTZjZjFmZjk4Yzc4Y2U1NmEiLCJpYXQiOjE2OTY3NTk2NTAuNjY1MDE2LCJuYmYiOjE2OTY3NTk2NTAuNjY1MDE3LCJleHAiOjE3MjgzODIwNTAuNjU4NTE2LCJzdWIiOiI4MSIsInNjb3BlcyI6W119.d3FZQNoadTbD9zLq24Ys_8XandA6MHnpsKInUEl5XV1GqKau0AOXN84EfjSc9xuyF3CUM439oyXxkgkKFpEfb8VSd7P4ZPvVuXuFyPN3PZ8zM-Q1rvrxq-8NtIWX1ppCHjMcWlShtDX5Xv3t_hnNxUBEUlQX-ADT0BKLG4lhl4StFbxskyMLzFieod1_5MkIIgbBpsXeiLZiBQuZ5UKbjaD47Kp1SjT3DYuPvEdM0xvVa8SrlmDGzXg2tYsQe3Env7Dtm2mttWbmSHspoIODUf6XmIK5xyVE8w-5X-idVGxuHxD8CTUE6KsnlffsZzGQDNO_WRdsr1ByqYVdemLlDpD0RdlGZ0tLIU_OJRS9FIE11VasC77nqzj0Q1N9iFXoYXGzhhhSoufFqaKtQrea-HrZynY-REjThRsjkwZr8cn6aub5_kC3Kzui3VHAdeuMrtH6WMQNsJaxiJLIkYEiWZ9selcC22-rxk-pNV3t3qOiqROHFbI52Y6auMj00xwReRc4UBJkW5xow3B_lfIrtQl4M4GkRWI80-4FXiUQ7CIa88vPr71Um9LcQ9eLbx8mm_1JwJtzU-phi4nvmHG7hv26DYCPHU2lfo2InAzGropc3a3B77WYLTrDVcOXQ3Tww2UdHO9A-P16tAL0rpyxj2LUC3itS1pog4LSDSEskDo",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
 								},
-								"method": "DELETE",
+								"method": "POST",
 								"header": [
 									{
 										"key": "Accept",
@@ -139,37 +110,72 @@
 								],
 								"body": {
 									"mode": "formdata",
-									"formdata": []
+									"formdata": [
+										{
+											"key": "hostel_name",
+											"value": "nitesh",
+											"type": "text"
+										},
+										{
+											"key": "hostel_type",
+											"value": "boys",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Shankamul",
+											"type": "text"
+										},
+										{
+											"key": "phone_number",
+											"value": "9813371345",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "nitesh@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "website",
+											"value": "aaaa",
+											"type": "text"
+										},
+										{
+											"key": "hostel_image",
+											"type": "file",
+											"src": "/C:/Users/nites/Downloads/406063999_875325967597402_8753379613108924458_n.jpg"
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										}
+									]
 								},
 								"url": {
-									"raw": "{{url}}/admin/hostels/:slug",
+									"raw": "{{url}}/admin/hostels/nitesh-boys-hostel",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
 										"hostels",
-										":slug"
-									],
-									"variable": [
-										{
-											"key": "slug",
-											"value": ""
-										}
+										"nitesh-boys-hostel"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "show hostels",
+							"name": "show all hostels",
 							"request": {
 								"auth": {
 									"type": "bearer",
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMmMyZDc5MjgyYzM1YTljNWFkNjQ0ODFiM2U0MjE4OGUyMTVkNmY5NDM4MzU0NzhkOTBkMWVkYmE1OTcxMTc1MTZjZjFmZjk4Yzc4Y2U1NmEiLCJpYXQiOjE2OTY3NTk2NTAuNjY1MDE2LCJuYmYiOjE2OTY3NTk2NTAuNjY1MDE3LCJleHAiOjE3MjgzODIwNTAuNjU4NTE2LCJzdWIiOiI4MSIsInNjb3BlcyI6W119.d3FZQNoadTbD9zLq24Ys_8XandA6MHnpsKInUEl5XV1GqKau0AOXN84EfjSc9xuyF3CUM439oyXxkgkKFpEfb8VSd7P4ZPvVuXuFyPN3PZ8zM-Q1rvrxq-8NtIWX1ppCHjMcWlShtDX5Xv3t_hnNxUBEUlQX-ADT0BKLG4lhl4StFbxskyMLzFieod1_5MkIIgbBpsXeiLZiBQuZ5UKbjaD47Kp1SjT3DYuPvEdM0xvVa8SrlmDGzXg2tYsQe3Env7Dtm2mttWbmSHspoIODUf6XmIK5xyVE8w-5X-idVGxuHxD8CTUE6KsnlffsZzGQDNO_WRdsr1ByqYVdemLlDpD0RdlGZ0tLIU_OJRS9FIE11VasC77nqzj0Q1N9iFXoYXGzhhhSoufFqaKtQrea-HrZynY-REjThRsjkwZr8cn6aub5_kC3Kzui3VHAdeuMrtH6WMQNsJaxiJLIkYEiWZ9selcC22-rxk-pNV3t3qOiqROHFbI52Y6auMj00xwReRc4UBJkW5xow3B_lfIrtQl4M4GkRWI80-4FXiUQ7CIa88vPr71Um9LcQ9eLbx8mm_1JwJtzU-phi4nvmHG7hv26DYCPHU2lfo2InAzGropc3a3B77WYLTrDVcOXQ3Tww2UdHO9A-P16tAL0rpyxj2LUC3itS1pog4LSDSEskDo",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
@@ -183,37 +189,106 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/admin/hostels?slug=mero-hostel-1",
+									"raw": "{{url}}/admin/hostels",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
 										"hostels"
-									],
-									"query": [
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show single hostel",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
 										{
-											"key": "slug",
-											"value": "mero-hostel-1"
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
 										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/hostels/nitesh",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"hostels",
+										"nitesh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete hostel",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/hostels/nitesh",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"hostels",
+										"nitesh"
 									]
 								}
 							},
 							"response": []
 						}
 					]
-				}
-			]
-		},
-		{
-			"name": "Public",
-			"item": [
+				},
 				{
-					"name": "login",
+					"name": "room",
 					"item": [
 						{
-							"name": "login",
+							"name": "create room",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -226,30 +301,259 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "email",
-											"value": "hanciewanemphago@gmail.com",
+											"key": "room_number",
+											"value": "1",
 											"type": "text"
 										},
 										{
-											"key": "password",
-											"value": "12345678",
+											"key": "room_type",
+											"value": "double bed",
 											"type": "text"
+										},
+										{
+											"key": "capacity",
+											"value": "2 people",
+											"type": "text"
+										},
+										{
+											"key": "availability",
+											"value": "Yes",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "5000",
+											"type": "text"
+										},
+										{
+											"key": "features",
+											"value": "features",
+											"type": "text"
+										},
+										{
+											"key": "hostel_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "room_image",
+											"type": "file",
+											"src": "/C:/Users/nites/Downloads/406640868_1484299938829257_3099974975408674567_n.jpg"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{url}}/api/login",
+									"raw": "{{url}}/admin/rooms",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"api",
-										"login"
+										"admin",
+										"rooms"
 									]
 								}
 							},
 							"response": []
 						},
+						{
+							"name": "update room",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "room_number",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "room_type",
+											"value": "single",
+											"type": "text"
+										},
+										{
+											"key": "capacity",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "availability",
+											"value": "No",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "8000",
+											"type": "text"
+										},
+										{
+											"key": "features",
+											"value": "the features",
+											"type": "text"
+										},
+										{
+											"key": "hostel_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "room_image",
+											"type": "file",
+											"src": "/C:/Users/nites/Downloads/406091726_370409582070273_6010426854607869159_n.jpg"
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/rooms/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"rooms",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all rooms",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/rooms",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"rooms"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get single room",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/rooms/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"rooms",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete room",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/rooms/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"rooms",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "public",
+			"item": [
+				{
+					"name": "login",
+					"item": [
 						{
 							"name": "login",
 							"request": {
@@ -271,19 +575,15 @@
 										},
 										{
 											"key": "password",
-											"value": "12345678",
+											"value": "hancie12345",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "https://merohostel.hancie-phago.com.np/api/login",
-									"protocol": "https",
+									"raw": "{{url}}/api/login",
 									"host": [
-										"merohostel",
-										"hancie-phago",
-										"com",
-										"np"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -292,48 +592,14 @@
 								}
 							},
 							"response": []
-						},
-						{
-							"name": "forgot password",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "email",
-											"value": "hanciewanemphago@gmail.com",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/api/send-forgot-password-mail",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"send-forgot-password-mail"
-									]
-								}
-							},
-							"response": []
 						}
 					]
 				},
 				{
-					"name": "user",
+					"name": "users",
 					"item": [
 						{
-							"name": "create user account",
+							"name": "create users",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -353,75 +619,17 @@
 										},
 										{
 											"key": "email",
-											"value": "hanciewanemphago@gmail.com",
+											"value": "hanciephago@gmail.com",
 											"type": "text"
 										},
 										{
 											"key": "password",
-											"value": "12345678",
+											"value": "hancie12345",
 											"type": "text"
 										},
 										{
 											"key": "password_confirmation",
-											"value": "12345678",
-											"type": "text"
-										},
-										{
-											"key": "status",
-											"value": "Hostel_Owner",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "https://merohostel.hancie-phago.com.np/api/users",
-									"protocol": "https",
-									"host": [
-										"merohostel",
-										"hancie-phago",
-										"com",
-										"np"
-									],
-									"path": [
-										"api",
-										"users"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "create account",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "name",
-											"value": "Hancie Phago",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "hanciewanemphago@gmail.com",
-											"type": "text"
-										},
-										{
-											"key": "password",
-											"value": "12345678",
-											"type": "text"
-										},
-										{
-											"key": "password_confirmation",
-											"value": "12345678",
+											"value": "hancie12345",
 											"type": "text"
 										},
 										{

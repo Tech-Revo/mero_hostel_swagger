@@ -24,17 +24,18 @@ components:
       type: http
       scheme: bearer
 tags:
-  - name: Admin
-  - name: Admin > hostels
-  - name: Public
-  - name: Public > login
-  - name: Public > user
+  - name: admin
+  - name: admin > hostel
+  - name: admin > room
+  - name: public
+  - name: public > login
+  - name: public > users
 paths:
   /admin/hostels:
     post:
       tags:
-        - Admin > hostels
-      summary: create hostels
+        - admin > hostel
+      summary: create hostel
       requestBody:
         content:
           multipart/form-data:
@@ -43,22 +44,25 @@ paths:
               properties:
                 hostel_name:
                   type: string
-                  example: Mero Hostel
+                  example: Nitesh Boys Hostel
                 address:
                   type: string
-                  example: Kathmandu
+                  example: Shankamul
                 phone_number:
                   type: integer
-                  example: '9825915122'
+                  example: '9813371345'
                 email:
                   type: string
-                  example: hanciephago@gmail.com
+                  example: nitesh0hamal@gmail.com
                 website:
                   type: string
-                  example: hanciephago.com.np
-                user_id:
-                  type: integer
-                  example: '1'
+                  example: nsnsnsn
+                hostel_image:
+                  type: string
+                  format: binary
+                hostel_type:
+                  type: string
+                  example: Boys hostel
       security:
         - bearerAuth: []
       parameters:
@@ -74,8 +78,8 @@ paths:
             application/json: {}
     get:
       tags:
-        - Admin > hostels
-      summary: show hostels
+        - admin > hostel
+      summary: show all hostels
       security:
         - bearerAuth: []
       parameters:
@@ -84,20 +88,15 @@ paths:
           schema:
             type: string
           example: application/json
-        - name: slug
-          in: query
-          schema:
-            type: string
-          example: mero-hostel-1
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-  /admin/hostels/{slug}:
+  /admin/hostels/nitesh-boys-hostel:
     post:
       tags:
-        - Admin > hostels
+        - admin > hostel
       summary: update hostel
       requestBody:
         content:
@@ -105,15 +104,56 @@ paths:
             schema:
               type: object
               properties:
+                hostel_name:
+                  type: string
+                  example: nitesh
+                hostel_type:
+                  type: string
+                  example: boys
+                address:
+                  type: string
+                  example: Shankamul
+                phone_number:
+                  type: integer
+                  example: '9813371345'
+                email:
+                  type: string
+                  example: nitesh@gmail.com
+                website:
+                  type: string
+                  example: aaaa
+                hostel_image:
+                  type: string
+                  format: binary
                 _method:
                   type: string
                   example: put
+      security:
+        - bearerAuth: []
       parameters:
-        - name: slug
-          in: path
+        - name: Accept
+          in: header
           schema:
             type: string
-          required: true
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/hostels/nitesh:
+    get:
+      tags:
+        - admin > hostel
+      summary: show single hostel
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
       responses:
         '200':
           description: Successful response
@@ -121,7 +161,7 @@ paths:
             application/json: {}
     delete:
       tags:
-        - Admin > hostels
+        - admin > hostel
       summary: delete hostel
       security:
         - bearerAuth: []
@@ -131,11 +171,156 @@ paths:
           schema:
             type: string
           example: application/json
-        - name: slug
-          in: path
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/rooms:
+    post:
+      tags:
+        - admin > room
+      summary: create room
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                room_number:
+                  type: integer
+                  example: '1'
+                room_type:
+                  type: string
+                  example: double bed
+                capacity:
+                  type: string
+                  example: 2 people
+                availability:
+                  type: string
+                  example: 'Yes'
+                price:
+                  type: integer
+                  example: '5000'
+                features:
+                  type: string
+                  example: features
+                hostel_id:
+                  type: integer
+                  example: '2'
+                room_image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
           schema:
             type: string
-          required: true
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > room
+      summary: get all rooms
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/rooms/1:
+    post:
+      tags:
+        - admin > room
+      summary: update room
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                room_number:
+                  type: integer
+                  example: '1'
+                room_type:
+                  type: string
+                  example: single
+                capacity:
+                  type: integer
+                  example: '1'
+                availability:
+                  type: string
+                  example: 'No'
+                price:
+                  type: integer
+                  example: '8000'
+                features:
+                  type: string
+                  example: the features
+                hostel_id:
+                  type: integer
+                  example: '2'
+                room_image:
+                  type: string
+                  format: binary
+                _method:
+                  type: string
+                  example: put
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > room
+      summary: get single room
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > room
+      summary: delete room
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
       responses:
         '200':
           description: Successful response
@@ -144,7 +329,7 @@ paths:
   /api/login:
     post:
       tags:
-        - Public > login
+        - public > login
       summary: login
       requestBody:
         content:
@@ -156,33 +341,8 @@ paths:
                   type: string
                   example: hanciephago@gmail.com
                 password:
-                  type: integer
-                  example: '12345678'
-      parameters:
-        - name: Accept
-          in: header
-          schema:
-            type: string
-          example: application/json
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api/send-forgot-password-mail:
-    post:
-      tags:
-        - Public > login
-      summary: forgot password
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                email:
                   type: string
-                  example: hanciewanemphago@gmail.com
+                  example: hancie12345
       parameters:
         - name: Accept
           in: header
@@ -197,8 +357,8 @@ paths:
   /api/users:
     post:
       tags:
-        - Public > user
-      summary: create account
+        - public > users
+      summary: create users
       requestBody:
         content:
           multipart/form-data:
@@ -210,13 +370,13 @@ paths:
                   example: Hancie Phago
                 email:
                   type: string
-                  example: hanciewanemphago@gmail.com
+                  example: hanciephago@gmail.com
                 password:
-                  type: integer
-                  example: '12345678'
+                  type: string
+                  example: hancie12345
                 password_confirmation:
-                  type: integer
-                  example: '12345678'
+                  type: string
+                  example: hancie12345
                 status:
                   type: string
                   example: Hostel_Owner
