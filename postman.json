@@ -653,6 +653,45 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "hostel",
+					"item": [
+						{
+							"name": "get all hostels",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/hostels",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"hostels"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}

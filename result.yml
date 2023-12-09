@@ -30,6 +30,7 @@ tags:
   - name: public
   - name: public > login
   - name: public > users
+  - name: public > hostel
 paths:
   /admin/hostels:
     post:
@@ -380,6 +381,24 @@ paths:
                 status:
                   type: string
                   example: Hostel_Owner
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/hostels:
+    get:
+      tags:
+        - public > hostel
+      summary: get all hostels
+      security:
+        - bearerAuth: []
       parameters:
         - name: Accept
           in: header
