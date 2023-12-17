@@ -545,6 +545,62 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "update status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "hanciephago@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "Hostel_Owner",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/user/status/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"user",
+										"status",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},

@@ -27,6 +27,7 @@ tags:
   - name: admin
   - name: admin > hostel
   - name: admin > room
+  - name: admin > user
   - name: public
   - name: public > login
   - name: public > users
@@ -314,6 +315,36 @@ paths:
       tags:
         - admin > room
       summary: delete room
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/user/status/update:
+    post:
+      tags:
+        - admin > user
+      summary: update status
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: hanciephago@gmail.com
+                status:
+                  type: string
+                  example: Hostel_Owner
       security:
         - bearerAuth: []
       parameters:
