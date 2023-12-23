@@ -28,6 +28,7 @@ tags:
   - name: admin > hostel
   - name: admin > room
   - name: admin > user
+  - name: admin > hostel booking
   - name: public
   - name: public > login
   - name: public > users
@@ -243,7 +244,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /admin/rooms/1:
+  /admin/rooms/{room_id}:
     post:
       tags:
         - admin > room
@@ -289,23 +290,11 @@ paths:
           schema:
             type: string
           example: application/json
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    get:
-      tags:
-        - admin > room
-      summary: get single room
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: Accept
-          in: header
+        - name: room_id
+          in: path
           schema:
             type: string
-          example: application/json
+          required: true
       responses:
         '200':
           description: Successful response
@@ -315,6 +304,29 @@ paths:
       tags:
         - admin > room
       summary: delete room
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: room_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/rooms/1:
+    get:
+      tags:
+        - admin > room
+      summary: get single room
       security:
         - bearerAuth: []
       parameters:
@@ -341,7 +353,7 @@ paths:
               properties:
                 email:
                   type: string
-                  example: hanciephago@gmail.com
+                  example: nitesh@gmail.com
                 status:
                   type: string
                   example: Hostel_Owner
@@ -353,6 +365,98 @@ paths:
           schema:
             type: string
           example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/hostel-booking:
+    post:
+      tags:
+        - admin > hostel booking
+      summary: request hostel
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                hostel_id:
+                  type: integer
+                  example: '1'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: 127.0.0.1:8001
+            Date:
+              schema:
+                type: string
+                example: Sat, 23 Dec 2023 17:31:44 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: string
+                example: PHP/8.2.11
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '58'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  user_id: 2
+                  hostel_id: '1'
+                  updated_at: '2023-12-23T17:31:44.000000Z'
+                  created_at: '2023-12-23T17:31:44.000000Z'
+                  id: 1
+                message: You have requested the hostel successfully!
+    get:
+      tags:
+        - admin > hostel booking
+      summary: show all hostel request data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: user_id
+          in: query
+          schema:
+            type: integer
+          example: '2'
       responses:
         '200':
           description: Successful response
@@ -399,10 +503,10 @@ paths:
               properties:
                 name:
                   type: string
-                  example: Hancie Phago
+                  example: Aveshesh KC
                 email:
                   type: string
-                  example: hanciephago@gmail.com
+                  example: kcaveshesh123@gmail.com
                 password:
                   type: string
                   example: hancie12345
@@ -412,6 +516,9 @@ paths:
                 status:
                   type: string
                   example: Hostel_Owner
+                profile_image:
+                  type: string
+                  format: binary
       parameters:
         - name: Accept
           in: header
@@ -419,10 +526,70 @@ paths:
             type: string
           example: application/json
       responses:
-        '200':
-          description: Successful response
+        '201':
+          description: Created
+          headers:
+            Host:
+              schema:
+                type: string
+                example: 127.0.0.1:8001
+            Date:
+              schema:
+                type: string
+                example: Sat, 23 Dec 2023 18:05:06 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: string
+                example: PHP/8.2.11
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  data:
+                    name: Aveshesh KC
+                    email: kcaveshesh123@gmail.com
+                    status: Hostel_Owner
+                    updated_at: '2023-12-23T18:04:59.000000Z'
+                    created_at: '2023-12-23T18:04:59.000000Z'
+                    id: 4
+                    roles:
+                      - id: 1
+                        name: hostel_owner
+                        guard_name: web
+                        created_at: '2023-12-19T17:05:40.000000Z'
+                        updated_at: '2023-12-19T17:05:40.000000Z'
+                        pivot:
+                          model_type: App\Models\User
+                          model_id: 4
+                          role_id: 1
+                  token: iylXA2FLfJYYEh1b0putIhi50A3CU4yw24mdOMsyafuzh9g8go2ufEN3n3Bd
+                message: User account created successfully!
   /api/hostels:
     get:
       tags:

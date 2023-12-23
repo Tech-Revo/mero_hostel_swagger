@@ -196,6 +196,18 @@
 									"path": [
 										"admin",
 										"hostels"
+									],
+									"query": [
+										{
+											"key": "hostel_type",
+											"value": "Girls hostel",
+											"disabled": true
+										},
+										{
+											"key": "user_id",
+											"value": "2",
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -427,14 +439,20 @@
 									]
 								},
 								"url": {
-									"raw": "{{url}}/admin/rooms/1",
+									"raw": "{{url}}/admin/rooms/:room_id",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
 										"rooms",
-										"1"
+										":room_id"
+									],
+									"variable": [
+										{
+											"key": "room_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -531,14 +549,20 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/admin/rooms/1",
+									"raw": "{{url}}/admin/rooms/:room_id",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
 										"rooms",
-										"1"
+										":room_id"
+									],
+									"variable": [
+										{
+											"key": "room_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -575,7 +599,7 @@
 									"formdata": [
 										{
 											"key": "email",
-											"value": "hanciephago@gmail.com",
+											"value": "nitesh@gmail.com",
 											"type": "text"
 										},
 										{
@@ -595,6 +619,179 @@
 										"user",
 										"status",
 										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "hostel booking",
+					"item": [
+						{
+							"name": "request hostel",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "hostel_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/hostel-booking",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"hostel-booking"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "request hostel",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "hostel_id",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/admin/hostel-booking",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"hostel-booking"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8001"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 23 Dec 2023 17:31:44 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 23 Dec 2023 17:31:44 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.11"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"user_id\": 2,\n        \"hostel_id\": \"1\",\n        \"updated_at\": \"2023-12-23T17:31:44.000000Z\",\n        \"created_at\": \"2023-12-23T17:31:44.000000Z\",\n        \"id\": 1\n    },\n    \"message\": \"You have requested the hostel successfully!\"\n}"
+								}
+							]
+						},
+						{
+							"name": "show all hostel request data",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/hostel-booking?user_id=2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"hostel-booking"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "2"
+										}
 									]
 								}
 							},
@@ -670,12 +867,12 @@
 									"formdata": [
 										{
 											"key": "name",
-											"value": "Hancie Phago",
+											"value": "Aveshesh KC",
 											"type": "text"
 										},
 										{
 											"key": "email",
-											"value": "hanciephago@gmail.com",
+											"value": "kcaveshesh123@gmail.com",
 											"type": "text"
 										},
 										{
@@ -692,6 +889,11 @@
 											"key": "status",
 											"value": "Hostel_Owner",
 											"type": "text"
+										},
+										{
+											"key": "profile_image",
+											"type": "file",
+											"src": "/Users/hanciephago/Downloads/IMG_0643.jpg"
 										}
 									]
 								},
@@ -706,7 +908,113 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "create users",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Aveshesh KC",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "kcaveshesh123@gmail.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "hancie12345",
+													"type": "text"
+												},
+												{
+													"key": "password_confirmation",
+													"value": "hancie12345",
+													"type": "text"
+												},
+												{
+													"key": "status",
+													"value": "Hostel_Owner",
+													"type": "text"
+												},
+												{
+													"key": "profile_image",
+													"type": "file",
+													"src": "/Users/hanciephago/Downloads/IMG_0643.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/users",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8001"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 23 Dec 2023 18:05:06 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 23 Dec 2023 18:05:06 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.11"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"data\": {\n            \"name\": \"Aveshesh KC\",\n            \"email\": \"kcaveshesh123@gmail.com\",\n            \"status\": \"Hostel_Owner\",\n            \"updated_at\": \"2023-12-23T18:04:59.000000Z\",\n            \"created_at\": \"2023-12-23T18:04:59.000000Z\",\n            \"id\": 4,\n            \"roles\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"hostel_owner\",\n                    \"guard_name\": \"web\",\n                    \"created_at\": \"2023-12-19T17:05:40.000000Z\",\n                    \"updated_at\": \"2023-12-19T17:05:40.000000Z\",\n                    \"pivot\": {\n                        \"model_type\": \"App\\\\Models\\\\User\",\n                        \"model_id\": 4,\n                        \"role_id\": 1\n                    }\n                }\n            ]\n        },\n        \"token\": \"iylXA2FLfJYYEh1b0putIhi50A3CU4yw24mdOMsyafuzh9g8go2ufEN3n3Bd\"\n    },\n    \"message\": \"User account created successfully!\"\n}"
+								}
+							]
 						}
 					]
 				},
