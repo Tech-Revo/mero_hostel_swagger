@@ -371,7 +371,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /admin/user/{user_id}:
+  /admin/user/4:
     post:
       tags:
         - admin > user
@@ -388,6 +388,9 @@ paths:
                 email:
                   type: string
                   example: gfg
+                profile_image:
+                  type: string
+                  format: binary
                 _method:
                   type: string
                   example: put
@@ -399,16 +402,124 @@ paths:
           schema:
             type: string
           example: application/json
-        - name: user_id
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: 127.0.0.1:8000
+            Date:
+              schema:
+                type: string
+                example: Tue, 26 Dec 2023 16:38:09 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: string
+                example: PHP/8.2.11
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '58'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 4
+                  name: df
+                  email: gfg
+                  status: Hostel_Owner
+                  profile_image: >-
+                    http://localhost:8000/storage/1/Screenshot-2023-12-19-at-8.44.08 PM.png
+                  created_at: '2023-12-23T18:04:59.000000Z'
+                  updated_at: '2023-12-26T15:24:46.000000Z'
+                message: User data updated successfully!
+  /admin/user/{id}:
+    get:
+      tags:
+        - admin > user
+      summary: show single user data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
           in: path
           schema:
             type: string
           required: true
       responses:
         '200':
-          description: Successful response
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: 127.0.0.1:8000
+            Date:
+              schema:
+                type: string
+                example: Tue, 26 Dec 2023 16:34:59 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: string
+                example: PHP/8.2.11
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '56'
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 4
+                  name: df
+                  email: gfg
+                  status: Hostel_Owner
+                  profile_image: ''
+                  created_at: '2023-12-23T18:04:59.000000Z'
+                  updated_at: '2023-12-26T15:24:46.000000Z'
   /admin/hostel-booking:
     post:
       tags:
