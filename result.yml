@@ -33,6 +33,7 @@ tags:
   - name: public > login
   - name: public > users
   - name: public > hostel
+  - name: public > hostel room
 paths:
   /admin/hostels:
     post:
@@ -370,6 +371,44 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /admin/user/{user_id}:
+    post:
+      tags:
+        - admin > user
+      summary: update user details
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: df
+                email:
+                  type: string
+                  example: gfg
+                _method:
+                  type: string
+                  example: put
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: user_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /admin/hostel-booking:
     post:
       tags:
@@ -456,7 +495,7 @@ paths:
           in: query
           schema:
             type: integer
-          example: '2'
+          example: '9'
       responses:
         '200':
           description: Successful response
@@ -608,6 +647,27 @@ paths:
           schema:
             type: string
           example: Girls hostel
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/hostel-rooms:
+    get:
+      tags:
+        - public > hostel room
+      summary: show hostel room details
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: hostel_id
+          in: query
+          schema:
+            type: integer
+          example: '1'
       responses:
         '200':
           description: Successful response

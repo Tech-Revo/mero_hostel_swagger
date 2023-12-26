@@ -221,7 +221,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "{{token}}",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\n",
 											"type": "string"
 										}
 									]
@@ -235,9 +235,13 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/admin/hostels/nitesh",
+									"raw": "https://merohostel.hancie-phago.com.np/admin/hostels/nitesh",
+									"protocol": "https",
 									"host": [
-										"{{url}}"
+										"merohostel",
+										"hancie-phago",
+										"com",
+										"np"
 									],
 									"path": [
 										"admin",
@@ -623,6 +627,67 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "update user details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "df",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "gfg",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/user/:user_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"user",
+										":user_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -761,7 +826,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "{{token}}",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjkwMTk4N2YxNTgyOTYzZWE5ZjJiNWFmYTBkNDI0ZjkyODE5NzY0NGU4MmM2NmQ0M2I3NjQ1ZjY1OTI5ZDQyOTQyMjcxMmVmZjNiYTRmY2QiLCJpYXQiOjE3MDM0MTQ1MzEuNDQxMDQ5LCJuYmYiOjE3MDM0MTQ1MzEuNDQxMDUzLCJleHAiOjE3MzUwMzY5MzEuNDM3MjU1LCJzdWIiOiI5Iiwic2NvcGVzIjpbXX0.RcpKBTK7CXbVKbWursBrN_mqxVIp91Wt7VwpAKz1qqkamteUn-QIdL0UuLLbMComU1dcp4bKg__0lHIplGnTU0cpquHqJ5vab0SSGn4MP9N3820wif1yW6L1V0sTloN8lcEqTUJXt9eitVZCHI2WiUQPdSww4FEUGiTNzgt30AQf_6dO-Mq-WPT-VmMofzo_1P3E5IBqfRwZdgLBUtImupa12LXplo4YcKDiHTCRwx_9pkkumDhw7JZt1TcGaDSsQHWmWSZFmNYtxkuc-j-3Bb-yS-k8yjWiocjNYP2Ja0-HsEg5I05V-nOR8sOVEWW19zbi5LHCvZ4esub3wKwk0Ua5vGmKzuF3n050mgWQo6mdEqHseO29ctr5Oa501zdLGDg_JoryiC_Mqx41ySxSPZrL4oOraYovPlzKExsgWNAOcNFvcduz4odK5gxvyOcv0qcgXjzmLIC7khLLK3Gp4HkNn5ErHw0m-AkcFOrMytCR5D-N7hhcbpAprRIzFiX_asMvZU5_rgXiMY-e0utksfCqtzBAjXVeEG520ccg1l8piQgmIhCJCbZejFM1D2c-vyT7x8IEAfez9k565hyFIA0hSXkCk1wZ1AatCAIYF2CUhRAO4zY5oU-xEbex-GRcdSyeEtY6iKJFOXGlvsDWlwk7q27dfVnupp_oa1DgruA\n",
 											"type": "string"
 										}
 									]
@@ -779,9 +844,13 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{url}}/admin/hostel-booking?user_id=2",
+									"raw": "https://merohostel.hancie-phago.com.np/admin/hostel-booking?user_id=9",
+									"protocol": "https",
 									"host": [
-										"{{url}}"
+										"merohostel",
+										"hancie-phago",
+										"com",
+										"np"
 									],
 									"path": [
 										"admin",
@@ -790,7 +859,7 @@
 									"query": [
 										{
 											"key": "user_id",
-											"value": "2"
+											"value": "9"
 										}
 									]
 								}
@@ -1055,6 +1124,41 @@
 										{
 											"key": "hostel_type",
 											"value": "Girls hostel"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "hostel room",
+					"item": [
+						{
+							"name": "show hostel room details",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/hostel-rooms?hostel_id=1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"hostel-rooms"
+									],
+									"query": [
+										{
+											"key": "hostel_id",
+											"value": "1"
 										}
 									]
 								}
