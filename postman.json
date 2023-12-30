@@ -678,14 +678,20 @@
 									]
 								},
 								"url": {
-									"raw": "{{url}}/admin/user/4",
+									"raw": "{{url}}/admin/user/:id",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
 										"user",
-										"4"
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -899,8 +905,115 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"df\",\n        \"email\": \"gfg\",\n        \"status\": \"Hostel_Owner\",\n        \"profile_image\": \"\",\n        \"created_at\": \"2023-12-23T18:04:59.000000Z\",\n        \"updated_at\": \"2023-12-26T15:24:46.000000Z\"\n    }\n}"
+								},
+								{
+									"name": "show single user data",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/admin/user/2",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"user",
+												"2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Dec 2023 16:14:56 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Dec 2023 16:14:56 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.11"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "55"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Hancie Phago\",\n        \"email\": \"hanciephago@gmail.com\",\n        \"email_verified_at\": null,\n        \"status\": \"Hostel_Owner\",\n        \"profile_image\": \"\",\n        \"created_at\": \"2023-12-19T17:05:43.000000Z\",\n        \"updated_at\": \"2023-12-23T16:02:11.000000Z\"\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "show all users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/users?hostel_id=1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"users"
+									],
+									"query": [
+										{
+											"key": "hostel_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -1078,6 +1191,306 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "approve booking request",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/hostel-booking/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"hostel-booking",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user room",
+					"item": [
+						{
+							"name": "assign user to room",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "room_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "user_id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/user-rooms",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"user-rooms"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "assign user to room",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "room_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "user_id",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/admin/user-rooms",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"user-rooms"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Dec 2023 16:55:52 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Dec 2023 16:55:52 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.11"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "56"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"room_id\": \"1\",\n        \"user_id\": \"2\",\n        \"check_in_date\": \"2023-12-30T16:55:52.275891Z\",\n        \"status\": \"active\",\n        \"updated_at\": \"2023-12-30T16:55:52.000000Z\",\n        \"created_at\": \"2023-12-30T16:55:52.000000Z\",\n        \"id\": 1\n    },\n    \"message\": \"User assigned to room successfully!\"\n}"
+								}
+							]
+						},
+						{
+							"name": "get all user room data",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/user-rooms?hostel_id=1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"user-rooms"
+									],
+									"query": [
+										{
+											"key": "hostel_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get all user room data",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/admin/user-rooms?hostel_id=1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"user-rooms"
+											],
+											"query": [
+												{
+													"key": "hostel_id",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Dec 2023 17:27:18 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Dec 2023 17:27:18 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.11"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"room_number\": \"1\",\n            \"room_type\": \"double bed\",\n            \"room_capacity\": \"2\",\n            \"user_rooms\": [\n                {\n                    \"id\": 1,\n                    \"user_id\": 2,\n                    \"room_id\": 1,\n                    \"check_in_date\": \"2023-12-30 16:55:52\",\n                    \"check_out_date\": null,\n                    \"status\": \"active\",\n                    \"created_at\": \"2023-12-30T16:55:52.000000Z\",\n                    \"updated_at\": \"2023-12-30T16:55:52.000000Z\",\n                    \"user_name\": \"Hancie Phago\"\n                },\n                {\n                    \"id\": 3,\n                    \"user_id\": 3,\n                    \"room_id\": 1,\n                    \"check_in_date\": \"2023-12-30 16:55:52\",\n                    \"check_out_date\": null,\n                    \"status\": \"active\",\n                    \"created_at\": \"2023-12-30T16:55:52.000000Z\",\n                    \"updated_at\": \"2023-12-30T16:55:52.000000Z\",\n                    \"user_name\": \"Nitesh Hamal\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"room_number\": \"34\",\n            \"room_type\": \"double bed\",\n            \"room_capacity\": \"2\",\n            \"user_rooms\": [\n                {\n                    \"id\": 2,\n                    \"user_id\": 2,\n                    \"room_id\": 2,\n                    \"check_in_date\": \"2023-12-30 16:55:52\",\n                    \"check_out_date\": null,\n                    \"status\": \"active\",\n                    \"created_at\": \"2023-12-30T16:55:52.000000Z\",\n                    \"updated_at\": \"2023-12-30T16:55:52.000000Z\",\n                    \"user_name\": \"Hancie Phago\"\n                }\n            ]\n        }\n    ]\n}"
+								}
+							]
 						}
 					]
 				}

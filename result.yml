@@ -29,6 +29,7 @@ tags:
   - name: admin > room
   - name: admin > user
   - name: admin > hostel booking
+  - name: admin > user room
   - name: public
   - name: public > login
   - name: public > users
@@ -371,7 +372,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /admin/user/4:
+  /admin/user/{id}:
     post:
       tags:
         - admin > user
@@ -402,6 +403,11 @@ paths:
           schema:
             type: string
           example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: OK
@@ -453,7 +459,6 @@ paths:
                   created_at: '2023-12-23T18:04:59.000000Z'
                   updated_at: '2023-12-26T15:24:46.000000Z'
                 message: User data updated successfully!
-  /admin/user/{id}:
     get:
       tags:
         - admin > user
@@ -511,15 +516,53 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                data:
-                  id: 4
-                  name: df
-                  email: gfg
-                  status: Hostel_Owner
-                  profile_image: ''
-                  created_at: '2023-12-23T18:04:59.000000Z'
-                  updated_at: '2023-12-26T15:24:46.000000Z'
+              examples:
+                example-0:
+                  summary: show single user data
+                  value:
+                    data:
+                      id: 4
+                      name: df
+                      email: gfg
+                      status: Hostel_Owner
+                      profile_image: ''
+                      created_at: '2023-12-23T18:04:59.000000Z'
+                      updated_at: '2023-12-26T15:24:46.000000Z'
+                example-1:
+                  summary: show single user data
+                  value:
+                    data:
+                      id: 2
+                      name: Hancie Phago
+                      email: hanciephago@gmail.com
+                      email_verified_at: null
+                      status: Hostel_Owner
+                      profile_image: ''
+                      created_at: '2023-12-19T17:05:43.000000Z'
+                      updated_at: '2023-12-23T16:02:11.000000Z'
+  /admin/users:
+    get:
+      tags:
+        - admin > user
+      summary: show all users
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: hostel_id
+          in: query
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /admin/hostel-booking:
     post:
       tags:
@@ -612,6 +655,209 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /admin/hostel-booking/{id}:
+    post:
+      tags:
+        - admin > hostel booking
+      summary: approve booking request
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: put
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/user-rooms:
+    post:
+      tags:
+        - admin > user room
+      summary: assign user to room
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                room_id:
+                  type: integer
+                  example: '1'
+                user_id:
+                  type: integer
+                  example: '2'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: 127.0.0.1:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 30 Dec 2023 16:55:52 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: string
+                example: PHP/8.2.11
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '56'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  room_id: '1'
+                  user_id: '2'
+                  check_in_date: '2023-12-30T16:55:52.275891Z'
+                  status: active
+                  updated_at: '2023-12-30T16:55:52.000000Z'
+                  created_at: '2023-12-30T16:55:52.000000Z'
+                  id: 1
+                message: User assigned to room successfully!
+    get:
+      tags:
+        - admin > user room
+      summary: get all user room data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: hostel_id
+          in: query
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: 127.0.0.1:8000
+            Date:
+              schema:
+                type: string
+                example: Sat, 30 Dec 2023 17:27:18 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: string
+                example: PHP/8.2.11
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  - id: 1
+                    room_number: '1'
+                    room_type: double bed
+                    room_capacity: '2'
+                    user_rooms:
+                      - id: 1
+                        user_id: 2
+                        room_id: 1
+                        check_in_date: '2023-12-30 16:55:52'
+                        check_out_date: null
+                        status: active
+                        created_at: '2023-12-30T16:55:52.000000Z'
+                        updated_at: '2023-12-30T16:55:52.000000Z'
+                        user_name: Hancie Phago
+                      - id: 3
+                        user_id: 3
+                        room_id: 1
+                        check_in_date: '2023-12-30 16:55:52'
+                        check_out_date: null
+                        status: active
+                        created_at: '2023-12-30T16:55:52.000000Z'
+                        updated_at: '2023-12-30T16:55:52.000000Z'
+                        user_name: Nitesh Hamal
+                  - id: 2
+                    room_number: '34'
+                    room_type: double bed
+                    room_capacity: '2'
+                    user_rooms:
+                      - id: 2
+                        user_id: 2
+                        room_id: 2
+                        check_in_date: '2023-12-30 16:55:52'
+                        check_out_date: null
+                        status: active
+                        created_at: '2023-12-30T16:55:52.000000Z'
+                        updated_at: '2023-12-30T16:55:52.000000Z'
+                        user_name: Hancie Phago
   /api/login:
     post:
       tags:
