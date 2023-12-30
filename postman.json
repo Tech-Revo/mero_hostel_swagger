@@ -189,7 +189,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/admin/hostels",
+									"raw": "{{url}}/admin/hostels?hostel_type=Girls hostel&user_id=2&search=Dilibazar",
 									"host": [
 										"{{url}}"
 									],
@@ -200,13 +200,15 @@
 									"query": [
 										{
 											"key": "hostel_type",
-											"value": "Girls hostel",
-											"disabled": true
+											"value": "Girls hostel"
 										},
 										{
 											"key": "user_id",
-											"value": "2",
-											"disabled": true
+											"value": "2"
+										},
+										{
+											"key": "search",
+											"value": "Dilibazar"
 										}
 									]
 								}
@@ -1224,18 +1226,18 @@
 									]
 								},
 								"url": {
-									"raw": "{{url}}/admin/hostel-booking/:id",
+									"raw": "{{url}}/admin/hostel-booking/:hostel_booking_id",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
 										"hostel-booking",
-										":id"
+										":hostel_booking_id"
 									],
 									"variable": [
 										{
-											"key": "id",
+											"key": "hostel_booking_id",
 											"value": ""
 										}
 									]
